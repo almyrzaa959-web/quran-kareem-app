@@ -18,7 +18,7 @@ body {
   color: var(--حبر);
   min-height: 100vh;
 }
-رأس {
+header {
   background: linear-gradient(135deg, var(--ذهبي), #5c3c20);
   color: #fff;
   padding: 14px;
@@ -42,7 +42,7 @@ body {
 }
 .يمين { right: 12px; }
 .يسار { left: 12px; }
-تحكم {
+.تحكم {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -51,7 +51,7 @@ body {
   border-bottom: 1px solid var(--حد);
   justify-content: center;
 }
-تحكم button, تحكم select {
+.تحكم button, .تحكم select {
   padding: 8px 14px;
   border: none;
   border-radius: 6px;
@@ -60,25 +60,23 @@ body {
   cursor: pointer;
   font-size: 14px;
 }
-تحكم select {
+.تحكم select {
   background: #fff;
   color: var(--حبر);
   border: 1px solid var(--حد);
 }
-حاوية {
+.حاوية {
   max-width: 560px;
   margin: 0 auto;
   padding: 20px 15px;
-  display: block;
 }
-رقم-الصفحة {
-  display: block;
+.رقم-الصفحة {
   text-align: center;
   color: var(--ذهبي);
   margin: 8px 0;
   font-size: 16px;
 }
-مصحف {
+.مصحف {
   background: var(--ورق);
   padding: 40px 25px;
   border-radius: 8px;
@@ -86,33 +84,32 @@ body {
   min-height: 600px;
   position: relative;
   border: 1px solid var(--حد);
-  display: block;
 }
-مصحف::before {
+.مصحف::before {
   content: '';
   position: absolute;
   top: 14px; bottom: 14px; left: 14px; right: 14px;
   border: 2px solid var(--ذهبي);
   border-radius: 4px;
 }
-مصحف::after {
+.مصحف::after {
   content: '';
   position: absolute;
   top: 10px; bottom: 10px; left: 10px; right: 10px;
   border: 1px solid rgba(139,90,43,0.25);
   border-radius: 6px;
 }
-زاوية {
+.زاوية {
   position: absolute;
   width: 36px;
   height: 36px;
   border: 2px solid var(--ذهبي);
 }
-علوي-يسار { top: 18px; left: 18px; border-right: none; border-bottom: none; }
-علوي-يمين { top: 18px; right: 18px; border-left: none; border-bottom: none; }
-سفلي-يسار { bottom: 18px; left: 18px; border-right: none; border-top: none; }
-سفلي-يمين { bottom: 18px; right: 18px; border-left: none; border-top: none; }
-عنوان-سورة {
+.علوي-يسار { top: 18px; left: 18px; border-right: none; border-bottom: none; }
+.علوي-يمين { top: 18px; right: 18px; border-left: none; border-bottom: none; }
+.سفلي-يسار { bottom: 18px; left: 18px; border-right: none; border-top: none; }
+.سفلي-يمين { bottom: 18px; right: 18px; border-left: none; border-top: none; }
+.عنوان-السورة {
   text-align: center;
   font-size: 26px;
   color: var(--ذهبي);
@@ -123,18 +120,18 @@ body {
   position: relative;
   z-index: 1;
 }
-آيات {
+.آيات {
   text-align: center;
   line-height: 3;
   font-size: 26px;
   position: relative;
   z-index: 1;
 }
-آية {
+.آية {
   display: inline;
   margin: 0 3px;
 }
-رقم-آية {
+.رقم-الآية {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -147,13 +144,13 @@ body {
   margin: 0 5px;
   vertical-align: middle;
 }
-أزرار-تنقل {
+.أزرار-التنقل {
   display: flex;
   justify-content: space-between;
   margin-top: 25px;
   gap: 12px;
 }
-أزرار-تنقل button {
+.أزرار-التنقل button {
   flex: 1;
   padding: 14px;
   font-size: 17px;
@@ -163,7 +160,7 @@ body {
   border-radius: 8px;
   cursor: pointer;
 }
-قائمة-جانب {
+.قائمة-جانبية {
   position: fixed;
   top: 0;
   right: 0;
@@ -176,8 +173,8 @@ body {
   transform: translateX(100%);
   transition: 0.3s;
 }
-مفتوح { transform: translateX(0); }
-رأس-قائمة {
+.مفتوح { transform: translateX(0); }
+.رأس-القائمة {
   background: var(--ذهبي);
   color: #fff;
   padding: 14px;
@@ -185,7 +182,7 @@ body {
   font-weight: bold;
   position: relative;
 }
-إغلاق {
+.إغلاق {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -195,66 +192,66 @@ body {
   font-size: 22px;
   cursor: pointer;
 }
-سورة-رابط {
+.سورة-رابط {
   padding: 14px 20px;
   border-bottom: 1px solid #e0d5c0;
   cursor: pointer;
   font-size: 17px;
 }
-سورة-رابط:hover { background: rgba(139,90,43,0.08); }
+.سورة-رابط:hover { background: rgba(139,90,43,0.08); }
 </style>
 </head>
 <body>
 
 <header>
-  <button class="زر-جانب يسار" onclick="قائمةالسور()">📖 السور</button>
+  <button class="زر-جانب يسار" onclick="فتحقائمةالسور()">📖 قائمة السور</button>
   القرآن الكريم
-  <button class="زر-جانب يمين" onclick="الإعدادات()">⚙️</button>
+  <button class="زر-جانب يمين" onclick="فتحالإعدادات()">⚙️ الإعدادات</button>
 </header>
 
-<تحكم>
+<div class="تحكم">
   <select id="القارئ">
     <option>الشيخ ماهر المعيقلي</option>
     <option>الشيخ السديس</option>
     <option>الشيخ العفاسي</option>
   </select>
   <button onclick="تشغيل()">🔊 استماع</button>
-  <button onclick="تغييرالحجم(-2)">تصغير</button>
-  <button onclick="تغييرالحجم(2)">تكبير</button>
-</تحكم>
+  <button onclick="تغييرالحجم(-2)">تصغير الخط</button>
+  <button onclick="تغييرالحجم(2)">تكبير الخط</button>
+</div>
 
-<حاوية>
-  <رقم-الصفحة id="رقمصفحة">الصفحة 1</رقم-الصفحة>
-  <مصحف id="المصحف">
-    <زاوية class="علوي-يسار"></زاوية>
-    <زاوية class="علوي-يمين"></زاوية>
-    <زاوية class="سفلي-يسار"></زاوية>
-    <زاوية class="سفلي-يمين"></زاوية>
-    <عنوان-سورة id="عنوانسورة"></عنوان-سورة>
-    <آيات id="الآيات"></آيات>
-  </مصحف>
-  <أزرار-تنقل>
+<div class="حاوية">
+  <div class="رقم-الصفحة" id="رقم-الصفحة">الصفحة 1</div>
+  <div class="مصحف" id="المصحف">
+    <div class="زاوية علوي-يسار"></div>
+    <div class="زاوية علوي-يمين"></div>
+    <div class="زاوية سفلي-يسار"></div>
+    <div class="زاوية سفلي-يمين"></div>
+    <div class="عنوان-السورة" id="عنوان-السورة"></div>
+    <div class="آيات" id="الآيات"></div>
+  </div>
+  <div class="أزرار-التنقل">
     <button onclick="السابق()">← السابق</button>
     <button onclick="التالي()">التالي →</button>
-  </أزرار-تنقل>
-</حاوية>
+  </div>
+</div>
 
-<div class="قائمة-جانب" id="قائمةالسور">
-  <div class="رأس-قائمة">
+<div class="قائمة-جانبية" id="قائمة-السور">
+  <div class="رأس-القائمة">
     <button class="إغلاق" onclick="إغلاقالكل()">×</button>
     قائمة السور
   </div>
-  <div id="قائمةالسورالمحتوى"></div>
+  <div id="محتوى-قائمة-السور"></div>
 </div>
 
-<div class="قائمة-جانب" id="الإعداداتقائمة">
-  <div class="رأس-قائمة">
+<div class="قائمة-جانبية" id="الإعدادات">
+  <div class="رأس-القائمة">
     <button class="إغلاق" onclick="إغلاقالكل()">×</button>
     الإعدادات
   </div>
   <div style="padding:25px;">
-    <p>حجم الخط: <span id="الحجم">26</span></p>
-    <p>✅ يعمل بدون نت</p>
+    <p>حجم الخط: <span id="حجم-الخط">26</span></p>
+    <p style="margin-top:10px;">✅ يعمل بدون إنترنت</p>
     <p>✅ تصميم مثل المصحف</p>
   </div>
 </div>
@@ -297,7 +294,7 @@ const السور = [
 ];
 
 function بناءالقائمة() {
-  const قائمة = document.getElementById('قائمةالسورالمحتوى');
+  const قائمة = document.getElementById('محتوى-قائمة-السور');
   قائمة.innerHTML = '';
   السور.forEach((سورة, رقم) => {
     const عنصر = document.createElement('div');
@@ -305,45 +302,45 @@ function بناءالقائمة() {
     عنصر.textContent = سورة.اسم;
     عنصر.onclick = () => {
       الحالي = رقم;
-      عرض();
+      عرضالسورة();
       إغلاقالكل();
     };
     قائمة.appendChild(عنصر);
   });
 }
 
-function عرض() {
+function عرضالسورة() {
   const سورة = السور[الحالي];
-  document.getElementById('رقمصفحة').textContent = 'الصفحة ' + سورة.صفحة;
-  document.getElementById('عنوانسورة').textContent = سورة.اسم;
-  document.getElementById('الآيات').innerHTML = سورة.آيات.map((آية, i) => 
-    `<آية>${آية}<رقم-آية>${i+1}</رقم-آية></آية>`
+  document.getElementById('رقم-الصفحة').textContent = 'الصفحة ' + سورة.صفحة;
+  document.getElementById('عنوان-السورة').textContent = سورة.اسم;
+  document.getElementById('الآيات').innerHTML = سورة.آيات.map((آية, الترتيب) => 
+    `<span class="آية">${آية}<span class="رقم-الآية">${الترتيب+1}</span></span>`
   ).join('');
-  document.getElementById('الحجم').textContent = حجمالخط;
+  document.getElementById('حجم-الخط').textContent = حجمالخط;
   document.getElementById('الآيات').style.fontSize = حجمالخط + 'px';
 }
 
-function السابق() { if (الحالي > 0) { الحالي--; عرض(); } }
-function التالي() { if (الحالي < السور.length - 1) { الحالي++; عرض(); } }
-function تغييرالحجم(مقدار) { حجمالخط = Math.max(20, Math.min(34, حجمالخط + مقدار)); عرض(); }
-function قائمةالسور() {
-  document.getElementById('قائمةالسور').classList.toggle('مفتوح');
-  document.getElementById('الإعداداتقائمة').classList.remove('مفتوح');
+function السابق() { if (الحالي > 0) { الحالي--; عرضالسورة(); } }
+function التالي() { if (الحالي < السور.length - 1) { الحالي++; عرضالسورة(); } }
+function تغييرالحجم(مقدار) { حجمالخط = Math.max(20, Math.min(34, حجمالخط + مقدار)); عرضالسورة(); }
+function فتحقائمةالسور() {
+  document.getElementById('قائمة-السور').classList.toggle('مفتوح');
+  document.getElementById('الإعدادات').classList.remove('مفتوح');
 }
-function الإعدادات() {
-  document.getElementById('الإعداداتقائمة').classList.toggle('مفتوح');
-  document.getElementById('قائمةالسور').classList.remove('مفتوح');
+function فتحالإعدادات() {
+  document.getElementById('الإعدادات').classList.toggle('مفتوح');
+  document.getElementById('قائمة-السور').classList.remove('مفتوح');
 }
 function إغلاقالكل() {
-  document.getElementById('قائمةالسور').classList.remove('مفتوح');
-  document.getElementById('الإعداداتقائمة').classList.remove('مفتوح');
+  document.getElementById('قائمة-السور').classList.remove('مفتوح');
+  document.getElementById('الإعدادات').classList.remove('مفتوح');
 }
 function تشغيل() {
-  alert('🔊 جاري تشغيل:\n' + السور[الحالي].اسم + '\nالقارئ: ' + document.getElementById('القارئ').value);
+  alert('🔊 جاري تشغيل تلاوة:\n' + السور[الحالي].اسم + '\nالقارئ: ' + document.getElementById('القارئ').value);
 }
 
 بناءالقائمة();
-عرض();
+عرضالسورة();
 </script>
 </body>
 </html>
