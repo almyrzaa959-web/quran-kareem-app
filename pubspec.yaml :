@@ -1,0 +1,29 @@
+name: quran_complete
+description: تطبيق القرآن الكريم — شامل نص، صوت، تفسير، أوقات صلاة، أذكار، تقويم
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # للنصوص والقوائم
+  sqflite: ^2.3.0
+  path_provider: ^2.1.0
+  # للصوت
+  just_audio: ^0.9.36
+  # لأوقات الصلاة
+  geolocator: ^10.1.0
+  adhan: ^2.0.0
+  # للتقويم
+  hijri: ^3.0.0
+  # للواجهة
+  flutter_localizations:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/quran/
+    - assets/images/
