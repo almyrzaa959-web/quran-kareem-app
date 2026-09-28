@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>القرآن الكريم</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Amiri,sans-serif}
+:root{--gold:#8B5A2B;--light:#F8F3E6;--dark:#1A1A2E;--card:#fff;--text:#333}
+[data-theme="dark"]{--light:#1A1A2E;--card:#2A2A3E;--text:#f0f0f0}
+body{background:var(--light);color:var(--text);min-height:100vh}
+.container{max-width:480px;margin:0 auto;padding:16px}
+.top-card{background:linear-gradient(135deg,#8B5A2B,#5C3C20);color:#fff;padding:20px;border-radius:12px;text-align:center;margin-bottom:16px}
+.prayer-card{background:var(--card);border-radius:12px;padding:20px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.prayer-row{display:flex;justify-content:space-around;text-align:center}
+.prayer-item span{display:block}
+.prayer-name{font-weight:bold;margin-bottom:4px}
+.prayer-time{color:#777}
+.menu-card{background:var(--card);border-radius:12px;padding:20px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,.1);cursor:pointer;display:flex;align-items:center;gap:16px}
+.menu-icon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff}
+.toggle-btn{position:fixed;top:16px;left:16px;background:var(--card);border:none;padding:8px 12px;border-radius:8px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<button class="toggle-btn" onclick="toggleTheme()">🌙</button>
+<div class="container">
+
+<!-- التواريخ -->
+<div class="top-card">
+<h3>القرآن الكريم</h3>
+<p style="margin:8px 0">٢ ربيع الأول ١٤٤٧ هـ</p>
+<p style="opacity:.8">٢٨ سبتمبر ٢٠٢٦ م</p>
+</div>
+
+<!-- أوقات الصلاة -->
+<div class="prayer-card">
+<h4 style="text-align:center;margin-bottom:16px">أوقات الصلاة — البصرة</h4>
+<div class="prayer-row">
+<div class="prayer-item"><span class="prayer-name">الفجر</span><span class="prayer-time">٤:٣٢</span></div>
+<div class="prayer-item"><span class="prayer-name">الظهر</span><span class="prayer-time">١١:٥١</span></div>
+<div class="prayer-item"><span class="prayer-name">العصر</span><span class="prayer-time">٣:٣٥</span></div>
+<div class="prayer-item"><span class="prayer-name">المغرب</span><span class="prayer-time">٦:٠١</span></div>
+<div class="prayer-item"><span class="prayer-name">العشاء</span><span class="prayer-time">٧:٣١</span></div>
+</div>
+</div>
+
+<!-- القائمة -->
+<div class="menu-card" onclick="alert('قريباً: صفحة المصحف 📖')">
+<div class="menu-icon" style="background:#8B5A2B">📖</div>
+<div><h4>المصحف الشريف</h4><p style="color:#777;font-size:14px">قراءة وتلاوة</p></div>
+</div>
+
+<div class="menu-card" onclick="alert('قريباً: الأذكار والأدعية 📿')">
+<div class="menu-icon" style="background:#2E7D32">📿</div>
+<div><h4>الأذكار والأدعية</h4><p style="color:#777;font-size:14px">أذكار الصباح والمساء</p></div>
+</div>
+
+<div class="menu-card" onclick="alert('قريباً: التفاسير 📚')">
+<div class="menu-icon" style="background:#1565C0">📚</div>
+<div><h4>التفاسير</h4><p style="color:#777;font-size:14px">سنية وشيعية</p></div>
+</div>
+
+<div class="menu-card" onclick="alert('قريباً: الإعدادات ⚙️')">
+<div class="menu-icon" style="background:#616161">⚙️</div>
+<div><h4>الإعدادات</h4><p style="color:#777;font-size:14px">خط — خلفية — صوت</p></div>
+</div>
+
+</div>
+
+<script>
+function toggleTheme(){
+const body=document.body;
+if(body.getAttribute('data-theme')==='dark'){
+body.removeAttribute('data-theme');
+document.querySelector('.toggle-btn').textContent='🌙';
+}else{
+body.setAttribute('data-theme','dark');
+document.querySelector('.toggle-btn').textContent='☀️';
+}
+}
+</script>
+</body>
+</html>
